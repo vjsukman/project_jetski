@@ -23,7 +23,7 @@ class RegisterController extends Controller
 
         $validate['password'] = Hash::make($validate['password']);
         User::create($validate);
-        session()->flash('success', 'Register Success ,Please Login');
+        session()->flash('success', 'Register Success, Please Login!');
         return redirect('/');
     }
 }

@@ -15,28 +15,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-    <div class="custom-alert">
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            alertasdasdsadsadsadasdaasdasd
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    </div>
 
 
     <main class="form-signin w-100 m-auto">
-        <form>
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        @if (session()->has('invalid'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('invalid') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        <form action="/" method="post">
+            @csrf
             <div class="d-flex flex-column align-items-center">
                 <img class="mb-2" src="img/login.svg" alt="" width="80" height="100">
             </div>
             <h1 class="h3 mb-3 fw-normal text-white">Please sign in</h1>
 
             <div class="form-floating">
-                <input type="text" name="username" class="form-control" id="floatingUser" placeholder="Username">
+                <input type="text" name="username" class="form-control" id="username" placeholder="Username"
+                    required>
                 <label for="floatingInput">Username</label>
             </div>
             <div class="form-floating">
-                <input type="password" name="password" class="form-control" id="floatingPassword"
-                    placeholder="Password">
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password"
+                    required>
                 <label for="floatingPassword">Password</label>
             </div>
 
