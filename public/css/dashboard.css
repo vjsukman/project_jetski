@@ -12,28 +12,33 @@ body {
  * Sidebar
  */
 
-@media (min-width: 768px) {
-    .sidebar .offcanvas-lg {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 48px;
-    }
-    .navbar-search {
-        display: block;
-    }
+.sidebar {
+    background-color: #f8f9fa;
 }
-
-.sidebar .nav-link {
-    font-size: 0.875rem;
-    font-weight: 500;
+.nav-link {
+    padding: 10px 15px;
+    transition: background-color 0.3s;
 }
-
-.sidebar .nav-link.active {
-    color: #2470dc;
+.nav-link:hover {
+    background-color: #e9ecef;
 }
-
+.nav-link svg {
+    width: 20px;
+    height: 20px;
+}
 .sidebar-heading {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+.dropdown-item {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    cursor: pointer;
+}
+.dropdown-item:hover {
+    text-decoration: underline;
 }
 
 /*
